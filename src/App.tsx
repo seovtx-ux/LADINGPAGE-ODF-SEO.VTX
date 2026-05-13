@@ -67,10 +67,17 @@ export default function App() {
   };
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -446,10 +453,10 @@ export default function App() {
       <section className="pt-24 pb-12 lg:pt-48 lg:pb-32 overflow-hidden relative">
         {/* Background decorative elements */}
         <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3">
-          <div className="w-96 h-96 bg-brand-800/40 rounded-full blur-3xl opacity-50"></div>
+          <div className="w-96 h-96 bg-brand-800/40 rounded-full blur-2xl md:blur-3xl opacity-30 md:opacity-50"></div>
         </div>
         <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3">
-          <div className="w-96 h-96 bg-accent-500/10 rounded-full blur-3xl opacity-50"></div>
+          <div className="w-96 h-96 bg-accent-500/10 rounded-full blur-2xl md:blur-3xl opacity-30 md:opacity-50"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -507,7 +514,7 @@ export default function App() {
                 </div>
                 {/* Product Image */}
                 <div className="bg-slate-100 rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-auto sm:h-[420px] relative flex md:flex-col items-center justify-center border border-brand-500/40">
-                  <img src="https://vienthongxanh.cdn.vccloud.vn/wp-content/uploads/2023/06/banner-hop-phoi-quang-odf.jpg" alt="Banner ODF Maxtel" className="absolute inset-0 w-full h-full object-cover" />
+                  <img src="https://vienthongxanh.cdn.vccloud.vn/wp-content/uploads/2023/06/banner-hop-phoi-quang-odf.jpg" fetchPriority="high" loading="eager" alt="Banner ODF Maxtel" className="absolute inset-0 w-full h-full object-cover" />
                   
                   {/* Highlight elements */}
                   <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 bg-black/60  rounded-xl p-2.5 sm:p-3 border border-white/10 flex items-center gap-2 sm:gap-3 shadow-[0_0_15px_rgba(37,166,223,0.3)]">
@@ -607,9 +614,9 @@ export default function App() {
 
             {/* Feature Content Showcase */}
             <div className="lg:flex-1 w-full relative">
-               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[80%] max-h-[80%] bg-brand-600/10 blur-[80px] pointer-events-none rounded-full"></div>
+               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[80%] max-h-[80%] bg-brand-600/10 blur-[40px] md:blur-[80px] pointer-events-none rounded-full"></div>
               
-               <div className="glass-panel relative rounded-2xl shadow-[0_0_30px_rgba(37,166,223,0.15)] overflow-hidden border border-brand-500/30 w-full z-10 bg-[#0f172a]/80 backdrop-blur-md h-[300px] sm:h-[400px] flex items-center justify-center p-8 group">
+               <div className="glass-panel relative rounded-2xl shadow-[0_0_30px_rgba(37,166,223,0.15)] overflow-hidden border border-brand-500/30 w-full z-10 bg-[#0f172a] sm:bg-[#0f172a]/80 sm:backdrop-blur-md h-[300px] sm:h-[400px] flex items-center justify-center p-8 group">
                  <AnimatePresence mode="wait">
                    {[
                      {
@@ -697,7 +704,7 @@ export default function App() {
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
+                className={`px-5 py-3 sm:py-2.5 rounded-full text-sm font-semibold transition-all min-h-[44px] ${
                   activeFilter === filter.id 
                     ? 'bg-brand-600 text-white shadow-[0_0_10px_rgba(37,166,223,0.2)] shadow-brand-500/20 scale-105' 
                     : 'bg-[#0f172a] text-brand-200 hover:bg-slate-800 border border-brand-500/30'
@@ -775,7 +782,7 @@ export default function App() {
                 <button
                   key={filter.id}
                   onClick={() => setActiveSpecFilter(filter.id)}
-                  className={`px-5 py-3 lg:py-4 lg:px-6 rounded-xl text-sm font-semibold transition-all text-left whitespace-nowrap lg:whitespace-normal border flex items-center gap-3 relative ${
+                  className={`px-5 py-3.5 lg:py-4 lg:px-6 rounded-xl text-sm font-semibold transition-all text-left whitespace-nowrap lg:whitespace-normal border flex items-center gap-3 relative min-h-[48px] ${
                     activeSpecFilter === filter.id 
                       ? 'bg-brand-600 text-white border-brand-400 shadow-[0_0_20px_rgba(37,166,223,0.3)] shadow-brand-500/20' 
                       : 'bg-[#0f172a] text-brand-200 border-brand-500/30 hover:bg-slate-800 hover:border-brand-500/60'
@@ -791,9 +798,9 @@ export default function App() {
             {/* Spec Table */}
             <div className="lg:flex-1 w-full relative">
               {/* Optional background glow for table */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[80%] max-h-[80%] bg-brand-600/10 blur-[80px] pointer-events-none rounded-full"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[80%] max-h-[80%] bg-brand-600/10 blur-[40px] md:blur-[80px] pointer-events-none rounded-full"></div>
               
-              <div className="glass-panel relative rounded-2xl shadow-[0_0_30px_rgba(37,166,223,0.15)] overflow-hidden border border-brand-500/30 w-full z-10 bg-[#0f172a]/80 backdrop-blur-md">
+              <div className="glass-panel relative rounded-2xl shadow-[0_0_30px_rgba(37,166,223,0.15)] overflow-hidden border border-brand-500/30 w-full z-10 bg-[#0f172a] sm:bg-[#0f172a]/80 sm:backdrop-blur-md">
                  <div className="flex flex-col">
                    <div className="hidden md:grid md:grid-cols-5 bg-black/40 border-b border-brand-500/40">
                      <div className="py-4 px-6 text-sm font-bold text-white col-span-2 border-r border-brand-500/30">Đặc tính kỹ thuật</div>
@@ -875,7 +882,7 @@ export default function App() {
 
       {/* Testimonials & Use Cases */}
       <section className="py-12 md:py-24 bg-brand-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://vienthongxanh.cdn.vccloud.vn/wp-content/uploads/2023/04/cung-cap-hop-phoi-quang-odf-chinh-hang-tai-vien-thong-xanh.jpg')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('https://vienthongxanh.cdn.vccloud.vn/wp-content/uploads/2023/04/cung-cap-hop-phoi-quang-odf-chinh-hang-tai-vien-thong-xanh.jpg')] opacity-10 bg-cover bg-center sm:mix-blend-overlay"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-brand-900/90 via-brand-900 to-brand-950"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
