@@ -38,6 +38,8 @@ html {
   scroll-behavior: smooth;
   background-color: #020617; /* Very dark slate / space black */
   color: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {

@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ShieldCheck, Zap, Server, Wrench, CheckCircle2, Phone, Mail, ChevronRight, Star, Clock, ArrowRight, Menu, X, Check, Box, CloudLightning, Layers, Award } from 'lucide-react';
+import { NetworkBackground } from './components/NetworkBackground';
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -387,7 +388,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#020617] font-sans text-white scroll-smooth pb-20 sm:pb-0">
+    <div className="min-h-screen bg-[#020617] font-sans text-white scroll-smooth pb-20 sm:pb-0 relative">
+      <NetworkBackground />
       {/* Sticky Navbar */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0f172a]  shadow-[0_0_10px_rgba(37,166,223,0.2)] py-3 md:py-4' : 'bg-[#0f172a]  md:bg-[#0f172a]   py-4 md:py-6 border-b border-brand-500/30 md:border-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
@@ -397,11 +399,11 @@ export default function App() {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex flex-1 justify-center space-x-8">
-            <a href="#features" className="text-sm font-medium text-brand-200 hover:text-brand-600">Đặc tính</a>
-            <a href="#products" className="text-sm font-medium text-brand-200 hover:text-brand-600">Sản phẩm</a>
-            <a href="#highlights" className="text-sm font-medium text-brand-200 hover:text-brand-600">Ưu điểm</a>
-            <a href="#specifications" className="text-sm font-medium text-brand-200 hover:text-brand-600">Thông số</a>
-            <a href="#contact-section" className="text-sm font-medium text-brand-200 hover:text-brand-600">Báo giá</a>
+            <a href="#features" className="text-sm font-medium text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] hover:text-brand-500">Đặc tính</a>
+            <a href="#products" className="text-sm font-medium text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] hover:text-brand-500">Sản phẩm</a>
+            <a href="#highlights" className="text-sm font-medium text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] hover:text-brand-500">Ưu điểm</a>
+            <a href="#specifications" className="text-sm font-medium text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] hover:text-brand-500">Thông số</a>
+            <a href="#contact-section" className="text-sm font-medium text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] hover:text-brand-500">Báo giá</a>
           </div>
           
           <div className="hidden md:block">
@@ -416,7 +418,7 @@ export default function App() {
           {/* Mobile Menu Toggle */}
           <button 
             aria-label="Toggle menu"
-            className="md:hidden p-3 text-brand-200"
+            className="md:hidden p-3 text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -433,10 +435,10 @@ export default function App() {
               className="md:hidden overflow-hidden bg-[#0f172a]  border-b border-brand-500/30 absolute w-full"
             >
               <div className="px-4 py-4 flex flex-col space-y-2">
-                <a href="#features" onClick={() => setMobileMenuOpen(false)} className="px-3 py-3 text-base font-medium text-brand-200 hover:bg-slate-800 rounded-lg transition-colors">Đặc tính</a>
-                <a href="#products" onClick={() => setMobileMenuOpen(false)} className="px-3 py-3 text-base font-medium text-brand-200 hover:bg-slate-800 rounded-lg transition-colors">Sản phẩm</a>
-                <a href="#highlights" onClick={() => setMobileMenuOpen(false)} className="px-3 py-3 text-base font-medium text-brand-200 hover:bg-slate-800 rounded-lg transition-colors">Ưu điểm</a>
-                <a href="#specifications" onClick={() => setMobileMenuOpen(false)} className="px-3 py-3 text-base font-medium text-brand-200 hover:bg-slate-800 rounded-lg transition-colors">Thông số kỹ thuật</a>
+                <a href="#features" onClick={() => setMobileMenuOpen(false)} className="px-3 py-3 text-base font-medium text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] hover:bg-slate-800 rounded-lg transition-colors">Đặc tính</a>
+                <a href="#products" onClick={() => setMobileMenuOpen(false)} className="px-3 py-3 text-base font-medium text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] hover:bg-slate-800 rounded-lg transition-colors">Sản phẩm</a>
+                <a href="#highlights" onClick={() => setMobileMenuOpen(false)} className="px-3 py-3 text-base font-medium text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] hover:bg-slate-800 rounded-lg transition-colors">Ưu điểm</a>
+                <a href="#specifications" onClick={() => setMobileMenuOpen(false)} className="px-3 py-3 text-base font-medium text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] hover:bg-slate-800 rounded-lg transition-colors">Thông số kỹ thuật</a>
                 <button 
                   onClick={() => { setMobileMenuOpen(false); scrollToContact(); }}
                   className="w-full mt-4 bg-brand-600 text-white hover:bg-brand-500 hover:shadow-lg hover:shadow-brand-500/20 px-4 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 transition-all"
@@ -467,14 +469,14 @@ export default function App() {
               transition={{ duration: 0.6 }}
               className="text-center lg:text-left"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-900/40 border border-brand-100 text-brand-600 font-medium text-sm mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-900/40 border border-brand-100 text-brand-500 font-medium text-sm mb-6">
                 <span className="flex h-2 w-2 rounded-full bg-accent-500 animate-glow-red"></span>
                 Lựa chọn hàng đầu Việt Nam
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.2] lg:leading-[1.15] mb-4 lg:mb-6">
                 Hộp Phối Quang ODF <span className="text-gradient hover:animate-glow-red transition-all duration-300 cursor-default block mt-1 lg:mt-2">Maxtel Cao Cấp</span>
               </h1>
-              <p className="text-base sm:text-lg text-brand-200 mb-6 lg:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2 lg:px-0">
+              <p className="text-base sm:text-lg text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] mb-6 lg:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2 lg:px-0">
                 Giải pháp bảo vệ điểm đấu nối quang hoàn hảo. Vỏ thép sơn tĩnh điện chống gỉ sét, thiết kế thông minh, tối ưu cho hạ tầng viễn thông chuyên nghiệp.
               </p>
               
@@ -485,12 +487,12 @@ export default function App() {
                 >
                   Nhận Tư Vấn & Báo Giá <ArrowRight className="w-5 h-5" />
                 </button>
-                <div className="flex items-center gap-2 text-sm sm:text-base font-medium text-brand-200 bg-[#0f172a]  sm:bg-transparent px-4 py-2 sm:px-0 sm:py-0 rounded-full shadow-sm sm:shadow-none border border-brand-500/30 sm:border-none">
+                <div className="flex items-center gap-2 text-sm sm:text-base font-medium text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] bg-[#0f172a]  sm:bg-transparent px-4 py-2 sm:px-0 sm:py-0 rounded-full shadow-sm sm:shadow-none border border-brand-500/30 sm:border-none">
                   <ShieldCheck className="w-5 h-5 text-green-500" /> Bảo hành 24 tháng
                 </div>
               </div>
               
-              <div className="mt-8 lg:mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 text-sm text-brand-300">
+              <div className="mt-8 lg:mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 text-sm text-brand-50">
                 <div className="flex -space-x-2">
                   {[1,2,3,4].map(i => (
                     <div key={i} className="w-8 h-8 rounded-full bg-brand-800/40 border-2 border-white flex items-center justify-center shadow-sm">
@@ -521,7 +523,7 @@ export default function App() {
                     <div className="bg-green-500/20 p-1.5 sm:p-2 rounded-lg"><Zap className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" /></div>
                     <div className="text-left">
                       <div className="text-white text-xs sm:text-sm font-bold">Suy hao siêu thấp</div>
-                      <div className="text-brand-300 text-sm">&lt; 0.2dB</div>
+                      <div className="text-brand-50 text-sm">&lt; 0.2dB</div>
                     </div>
                   </div>
                   
@@ -529,7 +531,7 @@ export default function App() {
                     <div className="bg-brand-900/20 p-2 rounded-lg"><Wrench className="w-5 h-5 text-brand-400" /></div>
                     <div className="text-left hidden md:block">
                       <div className="text-white text-sm font-bold">Dễ thi công</div>
-                      <div className="text-brand-300 text-xs">Phụ kiện đầy đủ</div>
+                      <div className="text-brand-50 text-xs">Phụ kiện đầy đủ</div>
                     </div>
                   </div>
                 </div>
@@ -542,7 +544,7 @@ export default function App() {
       {/* Brands / Social Proof */}
       <section className="py-8 md:py-10 border-y border-brand-500/40 bg-[#0f172a] ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-semibold text-brand-300 uppercase tracking-wider mb-6 md:mb-8">Các đối tác tin cậy đã sử dụng Maxtel</p>
+          <p className="text-center text-sm font-semibold text-brand-50 uppercase tracking-wider mb-6 md:mb-8">Các đối tác tin cậy đã sử dụng Maxtel</p>
           <div className="flex flex-wrap justify-center gap-3 md:gap-6">
             {[
               { name: 'Viettel', theme: 'text-red-500 border-red-500/30 bg-red-500/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]' },
@@ -563,8 +565,8 @@ export default function App() {
       <section id="features" className="py-12 md:py-24 bg-[#020617]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16 overflow-hidden">
-            <h2 className="text-base text-brand-600 font-semibold tracking-wide uppercase">Chất Lượng Vượt Trội</h2>
-            <p className="mt-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-8 font-extrabold tracking-tight text-accent-500 text-center">
+            <h2 className="text-base text-brand-500 font-semibold tracking-wide uppercase">Chất Lượng Vượt Trội</h2>
+            <p className="mt-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-8 font-extrabold tracking-tight text-accent-500 [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] text-center">
               VÌ SAO ODF MAXTEL LẠI ĐƯỢC SĂN ĐÓN
             </p>
           </div>
@@ -603,11 +605,11 @@ export default function App() {
                 >
                   <div className="flex items-center gap-3">
                     <div className={`p-2 rounded-lg ${activeFeature === idx ? 'bg-brand-500/20' : 'bg-slate-800'}`}>
-                      <feat.icon className={`w-5 h-5 flex-shrink-0 ${activeFeature === idx ? 'text-brand-400' : 'text-brand-600'}`} />
+                      <feat.icon className={`w-5 h-5 flex-shrink-0 ${activeFeature === idx ? 'text-brand-400' : 'text-brand-500'}`} />
                     </div>
-                    <span className={`font-bold text-base ${activeFeature === idx ? 'text-white' : 'text-brand-200'}`}>{feat.title}</span>
+                    <span className={`font-bold text-base ${activeFeature === idx ? 'text-white' : 'text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)]'}`}>{feat.title}</span>
                   </div>
-                  <p className={`text-sm leading-relaxed hidden md:block mt-1 ${activeFeature === idx ? 'text-brand-200' : 'text-slate-400'} `}>{feat.desc}</p>
+                  <p className={`text-sm leading-relaxed hidden md:block mt-1 ${activeFeature === idx ? 'text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)]' : 'text-slate-200'} `}>{feat.desc}</p>
                 </button>
               ))}
             </div>
@@ -663,11 +665,11 @@ export default function App() {
       <section id="certifications" className="py-12 md:py-24 border-b border-brand-500/30 bg-[#0f172a] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
-            <h2 className="text-base text-brand-600 font-semibold tracking-wide uppercase">Uy tín & Chất lượng</h2>
+            <h2 className="text-base text-brand-500 font-semibold tracking-wide uppercase">Uy tín & Chất lượng</h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
               Chứng Nhận & Giải Thưởng
             </p>
-            <p className="mt-4 text-lg text-brand-200">
+            <p className="mt-4 text-lg text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)]">
               Các sản phẩm ODF Maxtel đều đạt kiểm định khắt khe, đầy đủ giấy tờ chứng nhận cho dự án.
             </p>
           </div>
@@ -687,11 +689,11 @@ export default function App() {
       <section id="products" className="py-12 md:py-24 relative tech-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
-            <h2 className="text-base text-brand-600 font-semibold tracking-wide uppercase"><span className="animate-pulse">Danh Mục Sản Phẩm</span></h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-accent-500 sm:text-4xl">
+            <h2 className="text-base text-brand-500 font-semibold tracking-wide uppercase"><span className="animate-pulse">Danh Mục Sản Phẩm</span></h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-accent-500 [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] sm:text-4xl">
               Sản Phẩm ODF Chính Hãng
             </p>
-            <p className="mt-4 text-lg text-brand-200">Đầy đủ các mẫu mã từ ODF trong nhà, ngoài trời đến tủ phối quang dung lượng cực lớn.</p>
+            <p className="mt-4 text-lg text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)]">Đầy đủ các mẫu mã từ ODF trong nhà, ngoài trời đến tủ phối quang dung lượng cực lớn.</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
@@ -707,7 +709,7 @@ export default function App() {
                 className={`px-5 py-3 sm:py-2.5 rounded-full text-sm font-semibold transition-all min-h-[44px] ${
                   activeFilter === filter.id 
                     ? 'bg-brand-600 text-white shadow-[0_0_10px_rgba(37,166,223,0.2)] shadow-brand-500/20 scale-105' 
-                    : 'bg-[#0f172a] text-brand-200 hover:bg-slate-800 border border-brand-500/30'
+                    : 'bg-[#0f172a] text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] hover:bg-slate-800 border border-brand-500/30'
                 }`}
               >
                 {filter.name}
@@ -735,8 +737,8 @@ export default function App() {
                     </div>
                   </div>
                   <div className="p-5 flex-1 flex flex-col border-t border-brand-500/10">
-                    <h3 className="text-lg font-bold text-white mb-2 line-clamp-2 group-hover:text-brand-600 transition-colors">{prod.title}</h3>
-                    <p className="text-brand-300 text-sm leading-relaxed mb-4 flex-1 line-clamp-3">{prod.desc}</p>
+                    <h3 className="text-lg font-bold text-white mb-2 line-clamp-2 group-hover:text-brand-500 transition-colors">{prod.title}</h3>
+                    <p className="text-brand-50 text-sm leading-relaxed mb-4 flex-1 line-clamp-3">{prod.desc}</p>
                     <div className="flex items-center justify-end mt-auto pt-2 gap-2">
                       <button className="text-brand-400 bg-brand-900/40 border border-brand-500/30 group-hover:bg-brand-600 group-hover:text-white px-3 py-1.5 text-xs font-bold rounded-lg transition-colors shadow-sm whitespace-nowrap">
                         NHẬN BÁO GIÁ
@@ -749,7 +751,7 @@ export default function App() {
           </motion.div>
           
           <div className="text-center mt-12 sm:mt-16 pt-8 border-t border-brand-500/30">
-            <button onClick={scrollToContact} className="w-full sm:w-auto bg-[#0f172a]  border-2 border-brand-600 text-brand-600 font-bold hover:bg-brand-900/40 px-8 py-3.5 rounded-xl sm:rounded-full inline-flex items-center justify-center gap-2 text-base transition-colors shadow-sm">
+            <button onClick={scrollToContact} className="w-full sm:w-auto bg-[#0f172a]  border-2 border-brand-600 text-brand-500 font-bold hover:bg-brand-900/40 px-8 py-3.5 rounded-xl sm:rounded-full inline-flex items-center justify-center gap-2 text-base transition-colors shadow-sm">
               Xem toàn bộ Catalogue (PDF) <ChevronRight className="w-5 h-5"/>
             </button>
           </div>
@@ -760,11 +762,11 @@ export default function App() {
       <section id="specifications" className="py-12 md:py-24 bg-[#020617] border-b border-brand-500/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
-            <h2 className="text-base text-brand-600 font-semibold tracking-wide uppercase">Thông Số Kỹ Thuật</h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-accent-500 sm:text-4xl">
+            <h2 className="text-base text-brand-500 font-semibold tracking-wide uppercase">Thông Số Kỹ Thuật</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-accent-500 [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] sm:text-4xl">
               Cấu Hình Chi Tiết Từng Dòng Sản Phẩm
             </p>
-            <p className="mt-4 text-lg text-brand-200">Bảng thông số kỹ thuật chuẩn giúp quý khách dễ dàng lựa chọn sản phẩm phù hợp với dự án.</p>
+            <p className="mt-4 text-lg text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)]">Bảng thông số kỹ thuật chuẩn giúp quý khách dễ dàng lựa chọn sản phẩm phù hợp với dự án.</p>
           </div>
 
           <div className="flex flex-col md:flex-row gap-8 lg:gap-12 max-w-5xl mx-auto">
@@ -785,7 +787,7 @@ export default function App() {
                   className={`px-5 py-3.5 md:py-4 md:px-6 rounded-xl text-sm font-semibold transition-all text-left whitespace-nowrap md:whitespace-normal border flex items-center gap-3 relative min-h-[48px] ${
                     activeSpecFilter === filter.id 
                       ? 'bg-brand-600 text-white border-brand-400 shadow-[0_0_20px_rgba(37,166,223,0.3)] shadow-brand-500/20' 
-                      : 'bg-[#0f172a] text-brand-200 border-brand-500/30 hover:bg-slate-800 hover:border-brand-500/60'
+                      : 'bg-[#0f172a] text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] border-brand-500/30 hover:bg-slate-800 hover:border-brand-500/60'
                   }`}
                 >
                   <filter.icon className={`w-5 h-5 flex-shrink-0 ${activeSpecFilter === filter.id ? 'text-white' : 'text-brand-400'}`} />
@@ -804,7 +806,7 @@ export default function App() {
                  <div className="flex flex-col">
                    <div className="hidden md:grid md:grid-cols-5 bg-black/40 border-b border-brand-500/40">
                      <div className="py-4 px-6 text-sm font-bold text-white col-span-2 border-r border-brand-500/30">Đặc tính kỹ thuật</div>
-                     <div className="py-4 px-6 text-sm font-bold text-brand-100 col-span-3">Chi tiết thông số</div>
+                     <div className="py-4 px-6 text-sm font-bold text-brand-50 col-span-3">Chi tiết thông số</div>
                    </div>
                    <div className="max-h-[500px] overflow-y-auto">
                      <AnimatePresence mode="wait">
@@ -817,7 +819,7 @@ export default function App() {
                        >
                          {specificationsData[activeSpecFilter].map((spec, index) => (
                            <div key={index} className="flex flex-col md:grid md:grid-cols-5 border-b last:border-b-0 border-brand-500/20 hover:bg-brand-900/20 transition-all duration-300 group">
-                             <div className="py-3 px-4 md:px-6 md:py-4 text-sm font-semibold text-brand-300 bg-black/20 md:border-r border-brand-500/20 col-span-2 group-hover:text-brand-400 transition-colors flex items-center">
+                             <div className="py-3 px-4 md:px-6 md:py-4 text-sm font-semibold text-brand-50 bg-black/20 md:border-r border-brand-500/20 col-span-2 group-hover:text-brand-400 transition-colors flex items-center">
                                {spec.param}
                              </div>
                              <div className="py-3 px-4 md:px-6 md:py-4 text-sm text-slate-100 col-span-3 leading-relaxed flex items-center">
@@ -840,8 +842,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-extrabold text-accent-500 mb-6">Thiết kế thông minh, thân thiện với kỹ thuật viên</h2>
-              <p className="text-lg text-brand-200 mb-8">
+              <h2 className="text-3xl font-extrabold text-accent-500 [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] mb-6">Thiết kế thông minh, thân thiện với kỹ thuật viên</h2>
+              <p className="text-lg text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] mb-8">
                 Hộp phối quang ODF Maxtel (12FO, 24FO, 48FO, 96FO) được thiết kế theo tiêu chuẩn công nghiệp 19 inch, cấu trúc gọn nhẹ nhưng cực kỳ vững chắc.
               </p>
               <ul className="space-y-4">
@@ -852,13 +854,13 @@ export default function App() {
                   "Bản lề chắc chắn, hỗ trợ khóa bảo vệ nếu cần."
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-white">
-                    <CheckCircle2 className="w-6 h-6 text-accent-500 flex-shrink-0" />
+                    <CheckCircle2 className="w-6 h-6 text-accent-500 [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] flex-shrink-0" />
                     <span className="text-white">{item}</span>
                   </li>
                 ))}
               </ul>
               <div className="mt-10">
-                <button onClick={scrollToContact} className="font-semibold text-brand-600 hover:text-brand-800 flex items-center gap-2 group">
+                <button onClick={scrollToContact} className="font-semibold text-brand-500 hover:text-brand-800 flex items-center gap-2 group">
                   Xem bảng giá chi tiết <span className="transform group-hover:translate-x-1 transition-transform"><ChevronRight className="w-5 h-5"/></span>
                 </button>
               </div>
@@ -887,7 +889,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">Sự Hài Lòng Từ Thực Tế Công Trường</h2>
-            <p className="text-brand-200 text-lg">Maxtel tự hào đồng hành cùng các đơn vị thi công trên toàn quốc.</p>
+            <p className="text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] text-lg">Maxtel tự hào đồng hành cùng các đơn vị thi công trên toàn quốc.</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -920,7 +922,7 @@ export default function App() {
                   <img src={t.img} loading="lazy" decoding="async" alt={t.name} className="w-12 h-12 rounded-full border-2 border-brand-500 object-cover" />
                   <div>
                     <div className="font-bold text-lg text-white">{t.name}</div>
-                    <div className="text-sm text-brand-300">{t.role}</div>
+                    <div className="text-sm text-brand-50">{t.role}</div>
                   </div>
                 </div>
               </div>
@@ -952,15 +954,15 @@ export default function App() {
             <div className="md:w-5/12 bg-brand-600 p-8 sm:p-10 text-white flex flex-col justify-between">
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold mb-2 text-white">ƯU ĐÃI THÁNG NÀY!</h3>
-                <p className="text-brand-100 text-xs sm:text-sm mb-6">Nhận bảng giá VIP dành riêng cho đại lý & nhà thầu dự án.</p>
+                <p className="text-brand-50 text-xs sm:text-sm mb-6">Nhận bảng giá VIP dành riêng cho đại lý & nhà thầu dự án.</p>
                 <div className="flex items-center space-x-3 mb-4 text-xs sm:text-sm font-medium border-b border-brand-500 pb-3 sm:pb-4">
-                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-accent-500 flex-shrink-0" /> <span>Chiết khấu cao nhất thị trường</span>
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-accent-500 [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] flex-shrink-0" /> <span>Chiết khấu cao nhất thị trường</span>
                 </div>
                 <div className="flex items-center space-x-3 mb-4 text-xs sm:text-sm font-medium border-b border-brand-500 pb-3 sm:pb-4">
-                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-accent-500 flex-shrink-0" /> <span>Hàng sẵn số lượng lớn tại kho HN & HCM</span>
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-accent-500 [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] flex-shrink-0" /> <span>Hàng sẵn số lượng lớn tại kho HN & HCM</span>
                 </div>
                 <div className="flex items-center space-x-3 text-xs sm:text-sm font-medium border-b border-brand-500 pb-3 sm:pb-4 min-h-[14px]">
-                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-accent-500 flex-shrink-0" /> <span>Hỗ trợ kỹ thuật 24/7</span>
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-accent-500 [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] flex-shrink-0" /> <span>Hỗ trợ kỹ thuật 24/7</span>
                 </div>
               </div>
               <div className="mt-8">
@@ -969,7 +971,7 @@ export default function App() {
                     <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <div>
-                    <p className="text-sm text-brand-200 uppercase tracking-wider">Hotline 24/7</p>
+                    <p className="text-sm text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] uppercase tracking-wider">Hotline 24/7</p>
                     <p className="font-bold text-base sm:text-lg">0979.354.796</p>
                     <p className="font-bold text-base sm:text-lg">0973.497.685</p>
                   </div>
@@ -977,34 +979,34 @@ export default function App() {
               </div>
             </div>
             <div className="md:w-7/12 p-6 sm:p-10">
-              <h3 className="text-2xl font-bold text-white mb-6">Đăng Ký Nhận Báo Giá</h3>
+              <h3 className="text-2xl font-bold text-white drop-shadow-md mb-6">Đăng Ký Nhận Báo Giá</h3>
               {showModal ? (
                 <motion.div initial={{opacity:0}} animate={{opacity:1}} className="text-center py-10">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle2 className="w-8 h-8 text-green-600" />
                   </div>
                   <h4 className="text-xl font-bold mb-2">Đăng ký thành công!</h4>
-                  <p className="text-brand-300">Chuyên viên của chúng tôi sẽ gọi lại cho bạn trong vòng 5 phút tới.</p>
-                  <button onClick={() => setShowModal(false)} className="mt-6 text-brand-600 font-semibold underline">Gửi yêu cầu khác</button>
+                  <p className="text-brand-50">Chuyên viên của chúng tôi sẽ gọi lại cho bạn trong vòng 5 phút tới.</p>
+                  <button onClick={() => setShowModal(false)} className="mt-6 text-brand-500 font-semibold underline">Gửi yêu cầu khác</button>
                 </motion.div>
               ) : (
                 <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); setShowModal(true); }}>
                   <div>
-                    <label htmlFor="fullName" className="block text-sm font-medium text-brand-100 mb-1">Họ và tên *</label>
+                    <label htmlFor="fullName" className="block text-sm font-medium text-brand-50 mb-1">Họ và tên *</label>
                     <input id="fullName" type="text" required className="w-full px-4 py-3 rounded-lg border border-brand-500/30 focus:ring-2 focus:ring-brand-500 outline-none transition bg-black/20 text-white placeholder:text-slate-500" placeholder="Ví dụ: Nguyễn Văn A" />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-brand-100 mb-1">Số điện thoại *</label>
+                    <label htmlFor="phone" className="block text-sm font-medium text-brand-50 mb-1">Số điện thoại *</label>
                     <input id="phone" type="tel" required className="w-full px-4 py-3 rounded-lg border border-brand-500/30 focus:ring-2 focus:ring-brand-500 outline-none transition bg-black/20 text-white placeholder:text-slate-500" placeholder="09xxxxxxxx" />
                   </div>
                   <div>
-                    <label htmlFor="details" className="block text-sm font-medium text-brand-100 mb-1">Yêu cầu chi tiết</label>
+                    <label htmlFor="details" className="block text-sm font-medium text-brand-50 mb-1">Yêu cầu chi tiết</label>
                     <textarea id="details" rows={3} className="w-full px-4 py-3 rounded-lg border border-brand-500/30 focus:ring-2 focus:ring-brand-500 outline-none transition bg-black/20 text-white placeholder:text-slate-500 resize-none" placeholder="Nhập yêu cầu của bạn (số lượng, loại ODF...)"></textarea>
                   </div>
                   <button type="submit" className="w-full bg-accent-600 hover:bg-accent-500 text-white shadow-[0_0_20px_rgba(195,28,36,0.6)] border border-accent-400/50 font-bold py-4 rounded-lg text-lg transition-transform transform hover:scale-[1.02] shadow-[0_0_15px_rgba(37,166,223,0.3)] shadow-accent-500/30 flex items-center justify-center gap-2 mt-4">
                     Nhận Báo Giá Ngay Vào Zalo
                   </button>
-                  <p className="text-xs text-center text-brand-300 mt-4 flex items-center justify-center gap-1"><Clock className="w-3 h-3"/> Cam kết bảo mật thông tin</p>
+                  <p className="text-xs text-center text-brand-50 mt-4 flex items-center justify-center gap-1"><Clock className="w-3 h-3"/> Cam kết bảo mật thông tin</p>
                 </form>
               )}
             </div>
@@ -1013,13 +1015,13 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="glass-panel-heavy text-brand-200 text-sm border-t border-brand-500/30 py-12 text-sm">
+      <footer className="glass-panel-heavy text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] text-sm border-t border-brand-500/30 py-12 text-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <div className="flex items-center mb-6">
               <img src="https://maxtel.vn/wp-content/uploads/2024/06/cropped-Logo-MAXTEL-3000.png" loading="lazy" decoding="async" alt="MAXTEL Logo" className="h-8 md:h-10 w-auto object-contain" />
             </div>
-            <div className="flex flex-col gap-2 mt-4 mb-4 text-brand-300">
+            <div className="flex flex-col gap-2 mt-4 mb-4 text-brand-50">
               <p className="font-bold text-white">CÔNG TY CỔ PHẦN MAXTEL VIỆT NAM</p>
               <p>MST: 2500681449</p>
             </div>
@@ -1030,7 +1032,7 @@ export default function App() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2"><div className="mt-1"><Phone className="w-4 h-4"/></div> 0979.354.796 – 0973.497.685</li>
               <li className="flex items-start gap-2"><div className="mt-1"><Mail className="w-4 h-4"/></div> maxtel.vn@gmail.com</li>
-              <li className="flex items-start gap-2 text-brand-300 leading-relaxed mt-2 pt-2 border-t border-brand-500/20">
+              <li className="flex items-start gap-2 text-brand-50 leading-relaxed mt-2 pt-2 border-t border-brand-500/20">
                  Địa chỉ văn phòng đại diện: Số 2, ngõ 53 Đường Phạm Tuấn Tài, Phường Nghĩa Tân, Quận Cầu Giấy, Thành phố Hà Nội, Việt Nam
               </li>
             </ul>
