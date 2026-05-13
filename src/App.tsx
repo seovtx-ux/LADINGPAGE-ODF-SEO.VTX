@@ -975,6 +975,7 @@ export default function App() {
                   </div>
                   <div>
                     <p className="text-sm text-brand-200 uppercase tracking-wider">Hotline 24/7</p>
+                    <p className="font-bold text-base sm:text-lg">0979.354.796</p>
                     <p className="font-bold text-base sm:text-lg">0973.497.685</p>
                   </div>
                 </div>
@@ -1023,13 +1024,20 @@ export default function App() {
             <div className="flex items-center mb-6">
               <img src="https://maxtel.vn/wp-content/uploads/2024/06/cropped-Logo-MAXTEL-3000.png" alt="MAXTEL Logo" className="h-8 md:h-10 w-auto object-contain" />
             </div>
+            <div className="flex flex-col gap-2 mt-4 mb-4 text-brand-300">
+              <p className="font-bold text-white">CÔNG TY CỔ PHẦN MAXTEL VIỆT NAM</p>
+              <p>MST: 2500681449</p>
+            </div>
             <p className="mb-4">Thương hiệu hàng đầu Việt Nam về thiết bị & phụ kiện cáp quang. Mang lại giải pháp thi công hiệu quả, an toàn, chất lượng.</p>
           </div>
           <div className="md:col-span-1">
             <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Liên Hệ</h4>
             <ul className="space-y-3">
-              <li className="flex items-center gap-2"><Phone className="w-4 h-4"/> 0973.497.685</li>
-              <li className="flex items-center gap-2"><Mail className="w-4 h-4"/> maxtel.vn@gmail.com</li>
+              <li className="flex items-start gap-2"><div className="mt-1"><Phone className="w-4 h-4"/></div> 0979.354.796 – 0973.497.685</li>
+              <li className="flex items-start gap-2"><div className="mt-1"><Mail className="w-4 h-4"/></div> maxtel.vn@gmail.com</li>
+              <li className="flex items-start gap-2 text-brand-300 leading-relaxed mt-2 pt-2 border-t border-brand-500/20">
+                 Địa chỉ văn phòng đại diện: Số 2, ngõ 53 Đường Phạm Tuấn Tài, Phường Nghĩa Tân, Quận Cầu Giấy, Thành phố Hà Nội, Việt Nam
+              </li>
             </ul>
           </div>
           <div className="md:col-span-1">
