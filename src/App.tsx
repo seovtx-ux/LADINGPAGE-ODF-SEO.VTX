@@ -729,7 +729,7 @@ export default function App() {
                   <div className="p-5 flex-1 flex flex-col border-t border-brand-500/10">
                     <h3 className="text-lg font-bold text-white mb-2 line-clamp-2 group-hover:text-brand-600 transition-colors">{prod.title}</h3>
                     <p className="text-brand-300 text-sm leading-relaxed mb-4 flex-1 line-clamp-3">{prod.desc}</p>
-                    <div className="flex items-center justify-center mt-auto pt-2 gap-2">
+                    <div className="flex items-center justify-end mt-auto pt-2 gap-2">
                       <button className="text-brand-400 bg-brand-900/40 border border-brand-500/30 group-hover:bg-brand-600 group-hover:text-white px-3 py-1.5 text-xs font-bold rounded-lg transition-colors shadow-sm whitespace-nowrap">
                         NHẬN BÁO GIÁ
                       </button>
