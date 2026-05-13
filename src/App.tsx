@@ -408,7 +408,8 @@ export default function App() {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden p-2 text-brand-200"
+            aria-label="Toggle menu"
+            className="md:hidden p-3 text-brand-200"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -424,16 +425,16 @@ export default function App() {
               exit={{ height: 0, opacity: 0 }}
               className="md:hidden overflow-hidden bg-[#0f172a]  border-b border-brand-500/30 absolute w-full"
             >
-              <div className="px-4 py-4 flex flex-col space-y-4">
-                <a href="#features" onClick={() => setMobileMenuOpen(false)} className="px-2 py-2 text-base font-medium text-slate-700 hover:bg-[#020617] rounded-lg">Đặc tính</a>
-                <a href="#products" onClick={() => setMobileMenuOpen(false)} className="px-2 py-2 text-base font-medium text-slate-700 hover:bg-[#020617] rounded-lg">Sản phẩm</a>
-                <a href="#highlights" onClick={() => setMobileMenuOpen(false)} className="px-2 py-2 text-base font-medium text-slate-700 hover:bg-[#020617] rounded-lg">Ưu điểm</a>
-                <a href="#specifications" onClick={() => setMobileMenuOpen(false)} className="px-2 py-2 text-base font-medium text-slate-700 hover:bg-[#020617] rounded-lg">Thông số kỹ thuật</a>
+              <div className="px-4 py-4 flex flex-col space-y-2">
+                <a href="#features" onClick={() => setMobileMenuOpen(false)} className="px-3 py-3 text-base font-medium text-brand-200 hover:bg-slate-800 rounded-lg transition-colors">Đặc tính</a>
+                <a href="#products" onClick={() => setMobileMenuOpen(false)} className="px-3 py-3 text-base font-medium text-brand-200 hover:bg-slate-800 rounded-lg transition-colors">Sản phẩm</a>
+                <a href="#highlights" onClick={() => setMobileMenuOpen(false)} className="px-3 py-3 text-base font-medium text-brand-200 hover:bg-slate-800 rounded-lg transition-colors">Ưu điểm</a>
+                <a href="#specifications" onClick={() => setMobileMenuOpen(false)} className="px-3 py-3 text-base font-medium text-brand-200 hover:bg-slate-800 rounded-lg transition-colors">Thông số kỹ thuật</a>
                 <button 
                   onClick={() => { setMobileMenuOpen(false); scrollToContact(); }}
-                  className="w-full mt-2 bg-brand-900/40 text-brand-700 hover:bg-brand-800/40 px-4 py-3 rounded-xl font-bold flex items-center justify-center gap-2"
+                  className="w-full mt-4 bg-brand-600 text-white hover:bg-brand-500 hover:shadow-lg hover:shadow-brand-500/20 px-4 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 transition-all"
                 >
-                  <Phone className="w-4 h-4" /> Liên hệ tư vấn
+                  <Phone className="w-5 h-5" /> Liên hệ tư vấn
                 </button>
               </div>
             </motion.div>
@@ -640,7 +641,7 @@ export default function App() {
                          className="flex flex-col items-center text-center w-full h-full justify-center absolute inset-0"
                        >
                          {/* Image Background */}
-                         <img src={content.image} alt={content.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                         <img src={content.image} loading="lazy" decoding="async" alt={content.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                        </motion.div>
                      )
                    ))}
@@ -669,7 +670,7 @@ export default function App() {
              <div className="absolute inset-0 bg-gradient-to-r from-brand-600/0 via-brand-500/10 to-brand-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -translate-x-full group-hover:translate-x-full"></div>
              
              <div className="w-full bg-[#020617] rounded-xl sm:rounded-2xl border border-brand-500/20 overflow-hidden relative group-hover:border-brand-500/40 transition-colors">
-               <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1200&h=400" alt="ISO Certification and Awards" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+               <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1200&h=400" loading="lazy" decoding="async" alt="ISO Certification and Awards" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
              </div>
           </div>
         </div>
@@ -721,7 +722,7 @@ export default function App() {
                   onClick={scrollToContact}
                 >
                   <div className="aspect-square relative overflow-hidden bg-white rounded-t-2xl p-4 flex items-center justify-center">
-                    <img src={prod.img} alt={prod.title} className="w-full h-full p-2 object-contain group-hover:scale-110 transition-transform duration-700" />
+                    <img src={prod.img} loading="lazy" decoding="async" alt={prod.title} className="w-full h-full p-2 object-contain group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute bottom-3 right-3">
                       <span className="bg-brand-600/90 text-white border border-brand-400/50 text-sm font-bold px-2.5 py-1 rounded shadow-sm">{prod.cap}</span>
                     </div>
@@ -859,7 +860,7 @@ export default function App() {
             <div className="relative h-[300px] sm:h-[400px] lg:h-full min-h-[400px]">
               <div className="absolute inset-0 bg-brand-800/40 rounded-3xl transform rotate-3 scale-105"></div>
               <div className="bg-slate-800 rounded-3xl overflow-hidden relative shadow-2xl h-full w-full flex border border-slate-700 bg-[#0f172a] ">
-                 <img src="https://vienthongxanh.cdn.vccloud.vn/wp-content/uploads/2023/04/cau-tao-hop-phoi-quang-odf.jpg" alt="Cable management detail" className="absolute inset-0 w-full h-full object-contain p-4 transition-all duration-700" />
+                 <img src="https://vienthongxanh.cdn.vccloud.vn/wp-content/uploads/2023/04/cau-tao-hop-phoi-quang-odf.jpg" loading="lazy" decoding="async" alt="Cable management detail" className="absolute inset-0 w-full h-full object-contain p-4 transition-all duration-700" />
                  <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10 p-4 sm:p-5 bg-brand-900/80  rounded-2xl border border-white/20 max-w-[200px] shadow-[0_0_20px_rgba(37,166,223,0.4)]">
                    <div className="bg-[#0f172a] /20 border border-white/30 rounded-full w-10 h-10 flex items-center justify-center mb-3">
                      <CheckCircle2 className="text-white w-5 h-5" />
@@ -909,7 +910,7 @@ export default function App() {
                 </div>
                 <p className="text-brand-50 text-base leading-relaxed mb-8 flex-1">"{t.text}"</p>
                 <div className="flex items-center gap-4 mt-auto">
-                  <img src={t.img} alt={t.name} className="w-12 h-12 rounded-full border-2 border-brand-500 object-cover" />
+                  <img src={t.img} loading="lazy" decoding="async" alt={t.name} className="w-12 h-12 rounded-full border-2 border-brand-500 object-cover" />
                   <div>
                     <div className="font-bold text-lg text-white">{t.name}</div>
                     <div className="text-sm text-brand-300">{t.role}</div>
@@ -927,7 +928,7 @@ export default function App() {
               "https://vienthongxanh.cdn.vccloud.vn/wp-content/uploads/2023/04/hop-phoi-quang-odf-maxtel.jpg"
             ].map((img, i) => (
                <div key={i} className="h-32 sm:h-48 rounded-xl overflow-hidden relative group">
-                 <img src={img} alt="Maxtel in action" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                 <img src={img} loading="lazy" decoding="async" alt="Maxtel in action" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                  <div className="absolute inset-0 bg-brand-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                    <span className="text-white font-medium text-sm border border-white/30 px-3 py-1 rounded-full bg-black/40-sm">Dự án thực tế</span>
                  </div>
@@ -982,16 +983,16 @@ export default function App() {
               ) : (
                 <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); setShowModal(true); }}>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">Họ và tên *</label>
-                    <input type="text" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="Ví dụ: Nguyễn Văn A" />
+                    <label htmlFor="fullName" className="block text-sm font-medium text-brand-100 mb-1">Họ và tên *</label>
+                    <input id="fullName" type="text" required className="w-full px-4 py-3 rounded-lg border border-brand-500/30 focus:ring-2 focus:ring-brand-500 outline-none transition bg-black/20 text-white placeholder:text-slate-500" placeholder="Ví dụ: Nguyễn Văn A" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">Số điện thoại *</label>
-                    <input type="tel" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="09xxxxxxxx" />
+                    <label htmlFor="phone" className="block text-sm font-medium text-brand-100 mb-1">Số điện thoại *</label>
+                    <input id="phone" type="tel" required className="w-full px-4 py-3 rounded-lg border border-brand-500/30 focus:ring-2 focus:ring-brand-500 outline-none transition bg-black/20 text-white placeholder:text-slate-500" placeholder="09xxxxxxxx" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">Yêu cầu chi tiết</label>
-                    <textarea rows={3} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition bg-[#0f172a]  resize-none" placeholder="Nhập yêu cầu của bạn (số lượng, loại ODF...)"></textarea>
+                    <label htmlFor="details" className="block text-sm font-medium text-brand-100 mb-1">Yêu cầu chi tiết</label>
+                    <textarea id="details" rows={3} className="w-full px-4 py-3 rounded-lg border border-brand-500/30 focus:ring-2 focus:ring-brand-500 outline-none transition bg-black/20 text-white placeholder:text-slate-500 resize-none" placeholder="Nhập yêu cầu của bạn (số lượng, loại ODF...)"></textarea>
                   </div>
                   <button type="submit" className="w-full bg-accent-600 hover:bg-accent-500 text-white shadow-[0_0_20px_rgba(195,28,36,0.6)] border border-accent-400/50 font-bold py-4 rounded-lg text-lg transition-transform transform hover:scale-[1.02] shadow-[0_0_15px_rgba(37,166,223,0.3)] shadow-accent-500/30 flex items-center justify-center gap-2 mt-4">
                     Nhận Báo Giá Ngay Vào Zalo
@@ -1009,7 +1010,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <div className="flex items-center mb-6">
-              <img src="https://maxtel.vn/wp-content/uploads/2024/06/cropped-Logo-MAXTEL-3000.png" alt="MAXTEL Logo" className="h-8 md:h-10 w-auto object-contain" />
+              <img src="https://maxtel.vn/wp-content/uploads/2024/06/cropped-Logo-MAXTEL-3000.png" loading="lazy" decoding="async" alt="MAXTEL Logo" className="h-8 md:h-10 w-auto object-contain" />
             </div>
             <div className="flex flex-col gap-2 mt-4 mb-4 text-brand-300">
               <p className="font-bold text-white">CÔNG TY CỔ PHẦN MAXTEL VIỆT NAM</p>
@@ -1029,10 +1030,10 @@ export default function App() {
           </div>
           <div className="md:col-span-1">
             <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Chính Sách</h4>
-            <ul className="space-y-3">
-              <li><a href="#" className="hover:text-white transition">Chính sách bảo hành</a></li>
-              <li><a href="#" className="hover:text-white transition">Chính sách vận chuyển</a></li>
-              <li><a href="#" className="hover:text-white transition">Đại lý phân phối</a></li>
+            <ul className="space-y-4 md:space-y-3">
+              <li><a href="#" className="inline-block py-1 hover:text-white transition">Chính sách bảo hành</a></li>
+              <li><a href="#" className="inline-block py-1 hover:text-white transition">Chính sách vận chuyển</a></li>
+              <li><a href="#" className="inline-block py-1 hover:text-white transition">Đại lý phân phối</a></li>
             </ul>
           </div>
           <div className="md:col-span-1 rounded-xl overflow-hidden h-32 md:h-full min-h-[120px]">
