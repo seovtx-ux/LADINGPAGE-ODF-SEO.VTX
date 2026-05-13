@@ -614,17 +614,20 @@ export default function App() {
                      {
                        title: "Độ Bền Vô Địch",
                        desc: "Chi tiết hình ảnh độ dày thép, nước sơn tĩnh điện và cấu trúc gia cố chịu lực của vỏ ODF.",
-                       icon: ShieldCheck
+                       icon: ShieldCheck,
+                       image: "https://images.unsplash.com/photo-1623838965042-78d2b781da67?auto=format&fit=crop&q=80&w=800&h=600"
                      },
                      {
                        title: "Đầy Đủ Phụ Kiện",
                        desc: "Hình ảnh trọn bộ phụ kiện đi kèm trong hộp: Adapter, dây Pigtail, ống co nhiệt, lạt nhựa, ốc chờ...",
-                       icon: Wrench
+                       icon: Wrench,
+                       image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&q=80&w=800&h=600"
                      },
                      {
                        title: "Hiệu Suất Tối Đa",
                        desc: "Cận cảnh hình ảnh dây cáp quang được cố định bằng khay hàn tiêu chuẩn, kẹp cáp chắc chắn không gây gãy gập.",
-                       icon: Zap
+                       icon: Zap,
+                       image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800&h=600"
                      }
                    ].map((content, idx) => (
                      activeFeature === idx && (
@@ -634,17 +637,10 @@ export default function App() {
                          animate={{ opacity: 1, scale: 1 }}
                          exit={{ opacity: 0, scale: 0.95 }}
                          transition={{ duration: 0.3 }}
-                         className="flex flex-col items-center text-center w-full h-full justify-center"
+                         className="flex flex-col items-center text-center w-full h-full justify-center absolute inset-0"
                        >
-                         {/* Placeholder for showcase image */}
-                         <div className="absolute inset-0 bg-[#020617] group-hover:bg-[#020617]/50 transition-colors flex flex-col items-center justify-center z-0">
-                           <content.icon className="w-16 h-16 text-brand-500/30 mb-6 group-hover:scale-110 transition-transform duration-500" />
-                           <h3 className="text-2xl font-bold text-white mb-2 relative z-10 px-4">{content.title}</h3>
-                           <p className="text-brand-200/70 max-w-md relative z-10 px-4">{content.desc}</p>
-                           <div className="mt-8 px-6 py-2 rounded-full border border-brand-500/30 bg-brand-900/40 text-brand-300 text-sm font-medium tracking-wide">
-                             [Khu vực chèn hình ảnh minh hoạ]
-                           </div>
-                         </div>
+                         {/* Image Background */}
+                         <img src={content.image} alt={content.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                        </motion.div>
                      )
                    ))}
@@ -672,12 +668,8 @@ export default function App() {
              {/* Glow effect on hover */}
              <div className="absolute inset-0 bg-gradient-to-r from-brand-600/0 via-brand-500/10 to-brand-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -translate-x-full group-hover:translate-x-full"></div>
              
-             <div className="w-full aspect-[21/9] sm:aspect-[21/7] bg-[#020617] rounded-2xl md:rounded-3xl border border-brand-500/20 overflow-hidden flex flex-col items-center justify-center text-center relative group-hover:border-brand-500/40 transition-colors">
-               <Award className="w-12 h-12 sm:w-16 sm:h-16 text-brand-400 mb-4 opacity-50 group-hover:opacity-80 transition-opacity group-hover:scale-110 duration-500" />
-               <p className="text-brand-200 font-medium text-base sm:text-xl px-4">
-                 [Khung ảnh trưng bày đầy đủ Chứng chỉ chất lượng, ISO, CQ, Giải thưởng]
-               </p>
-               <p className="text-xs sm:text-sm text-brand-400/50 mt-2">Kích thước ảnh khuyến nghị: Thiết kế ngang (eg. 1200x400px)</p>
+             <div className="w-full bg-[#020617] rounded-xl sm:rounded-2xl border border-brand-500/20 overflow-hidden relative group-hover:border-brand-500/40 transition-colors">
+               <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1200&h=400" alt="ISO Certification and Awards" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
              </div>
           </div>
         </div>
@@ -707,7 +699,7 @@ export default function App() {
                 className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
                   activeFilter === filter.id 
                     ? 'bg-brand-600 text-white shadow-[0_0_10px_rgba(37,166,223,0.2)] shadow-brand-500/20 scale-105' 
-                    : 'bg-slate-100 text-brand-200 hover:bg-slate-200'
+                    : 'bg-[#0f172a] text-brand-200 hover:bg-slate-800 border border-brand-500/30'
                 }`}
               >
                 {filter.name}
@@ -737,15 +729,10 @@ export default function App() {
                   <div className="p-5 flex-1 flex flex-col border-t border-brand-500/10">
                     <h3 className="text-lg font-bold text-white mb-2 line-clamp-2 group-hover:text-brand-600 transition-colors">{prod.title}</h3>
                     <p className="text-brand-300 text-sm leading-relaxed mb-4 flex-1 line-clamp-3">{prod.desc}</p>
-                    <div className="flex items-center justify-between mt-auto pt-2">
-                      <div className="flex items-center gap-1.5 flex-wrap">
-                        {prod.tags.slice(0, 2).map(tag => (
-                          <span key={tag} className="text-sm font-medium text-brand-300 bg-slate-100 px-2 py-1.5 rounded-md">{tag}</span>
-                        ))}
-                      </div>
-                      <div className="text-brand-400 bg-brand-900/40 border border-brand-500/30 group-hover:bg-brand-600 group-hover:text-white p-2.5 rounded-lg transition-colors shadow-sm">
-                        <ArrowRight className="w-4 h-4" />
-                      </div>
+                    <div className="flex items-center justify-center mt-auto pt-2 gap-2">
+                      <button className="text-brand-400 bg-brand-900/40 border border-brand-500/30 group-hover:bg-brand-600 group-hover:text-white px-3 py-1.5 text-xs font-bold rounded-lg transition-colors shadow-sm whitespace-nowrap">
+                        NHẬN BÁO GIÁ
+                      </button>
                     </div>
                   </div>
                 </motion.div>
