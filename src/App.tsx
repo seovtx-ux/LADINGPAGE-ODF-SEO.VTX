@@ -526,8 +526,8 @@ export default function App() {
                   </div>
                   
                   <div className="hidden sm:flex absolute top-1/2 right-4 -translate-y-1/2 bg-black/60  rounded-xl p-3 border border-white/10 items-center gap-3 shadow-[0_0_15px_rgba(37,166,223,0.3)]">
-                    <div className="bg-brand-900/400/20 p-2 rounded-lg"><Wrench className="w-5 h-5 text-brand-400" /></div>
-                    <div className="text-left hidden lg:block">
+                    <div className="bg-brand-900/20 p-2 rounded-lg"><Wrench className="w-5 h-5 text-brand-400" /></div>
+                    <div className="text-left hidden md:block">
                       <div className="text-white text-sm font-bold">Dễ thi công</div>
                       <div className="text-brand-300 text-xs">Phụ kiện đầy đủ</div>
                     </div>
@@ -569,10 +569,10 @@ export default function App() {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-8 lg:gap-12 max-w-6xl mx-auto">
             {/* Sidebar / Tabs */}
             <div 
-              className="flex flex-row overflow-x-auto lg:flex-col gap-2 sm:gap-3 lg:w-80 pb-4 lg:pb-0 flex-shrink-0"
+              className="flex flex-row overflow-x-auto md:flex-col gap-2 sm:gap-3 md:w-64 lg:w-80 pb-4 md:pb-0 flex-shrink-0"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {[
@@ -595,7 +595,7 @@ export default function App() {
                 <button
                   key={idx}
                   onClick={() => setActiveFeature(idx)}
-                  className={`px-5 py-3 lg:py-4 lg:px-6 rounded-xl text-sm transition-all text-left whitespace-nowrap lg:whitespace-normal border flex flex-col gap-2 lg:min-w-0 ${
+                  className={`px-5 py-3 md:py-4 md:px-6 rounded-xl text-sm transition-all text-left whitespace-nowrap md:whitespace-normal border flex flex-col gap-2 md:min-w-0 ${
                     activeFeature === idx 
                       ? 'bg-brand-600/10 border-brand-500 shadow-[0_0_20px_rgba(37,166,223,0.15)] scale-[1.02]' 
                       : 'bg-[#0f172a] border-brand-500/20 hover:bg-slate-800 hover:border-brand-500/40'
@@ -607,13 +607,13 @@ export default function App() {
                     </div>
                     <span className={`font-bold text-base ${activeFeature === idx ? 'text-white' : 'text-brand-200'}`}>{feat.title}</span>
                   </div>
-                  <p className={`text-sm leading-relaxed hidden lg:block mt-1 ${activeFeature === idx ? 'text-brand-200' : 'text-slate-400'} `}>{feat.desc}</p>
+                  <p className={`text-sm leading-relaxed hidden md:block mt-1 ${activeFeature === idx ? 'text-brand-200' : 'text-slate-400'} `}>{feat.desc}</p>
                 </button>
               ))}
             </div>
 
             {/* Feature Content Showcase */}
-            <div className="lg:flex-1 w-full relative">
+            <div className="md:flex-1 w-full relative">
                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[80%] max-h-[80%] bg-brand-600/10 blur-[40px] md:blur-[80px] pointer-events-none rounded-full"></div>
               
                <div className="glass-panel relative rounded-2xl shadow-[0_0_30px_rgba(37,166,223,0.15)] overflow-hidden border border-brand-500/30 w-full z-10 bg-[#0f172a] sm:bg-[#0f172a]/80 sm:backdrop-blur-md h-[300px] sm:h-[400px] flex items-center justify-center p-8 group">
@@ -767,10 +767,10 @@ export default function App() {
             <p className="mt-4 text-lg text-brand-200">Bảng thông số kỹ thuật chuẩn giúp quý khách dễ dàng lựa chọn sản phẩm phù hợp với dự án.</p>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-8 lg:gap-12 max-w-5xl mx-auto">
             {/* Sidebar / Tabs */}
             <div 
-              className="flex flex-row overflow-x-auto lg:flex-col gap-2 sm:gap-3 lg:w-72 pb-4 lg:pb-0 flex-shrink-0"
+              className="flex flex-row overflow-x-auto md:flex-col gap-2 sm:gap-3 md:w-56 lg:w-72 pb-4 md:pb-0 flex-shrink-0"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
                {[
@@ -782,7 +782,7 @@ export default function App() {
                 <button
                   key={filter.id}
                   onClick={() => setActiveSpecFilter(filter.id)}
-                  className={`px-5 py-3.5 lg:py-4 lg:px-6 rounded-xl text-sm font-semibold transition-all text-left whitespace-nowrap lg:whitespace-normal border flex items-center gap-3 relative min-h-[48px] ${
+                  className={`px-5 py-3.5 md:py-4 md:px-6 rounded-xl text-sm font-semibold transition-all text-left whitespace-nowrap md:whitespace-normal border flex items-center gap-3 relative min-h-[48px] ${
                     activeSpecFilter === filter.id 
                       ? 'bg-brand-600 text-white border-brand-400 shadow-[0_0_20px_rgba(37,166,223,0.3)] shadow-brand-500/20' 
                       : 'bg-[#0f172a] text-brand-200 border-brand-500/30 hover:bg-slate-800 hover:border-brand-500/60'
@@ -790,13 +790,13 @@ export default function App() {
                 >
                   <filter.icon className={`w-5 h-5 flex-shrink-0 ${activeSpecFilter === filter.id ? 'text-white' : 'text-brand-400'}`} />
                   <span className="flex-1">{filter.name}</span>
-                  <ChevronRight className={`w-4 h-4 hidden lg:block transition-transform duration-300 ${activeSpecFilter === filter.id ? 'opacity-100 transform translate-x-1' : 'opacity-0 -translate-x-2'}`} />
+                  <ChevronRight className={`w-4 h-4 hidden md:block transition-transform duration-300 ${activeSpecFilter === filter.id ? 'opacity-100 transform translate-x-1' : 'opacity-0 -translate-x-2'}`} />
                 </button>
               ))}
             </div>
 
             {/* Spec Table */}
-            <div className="lg:flex-1 w-full relative">
+            <div className="md:flex-1 w-full relative">
               {/* Optional background glow for table */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[80%] max-h-[80%] bg-brand-600/10 blur-[40px] md:blur-[80px] pointer-events-none rounded-full"></div>
               
@@ -890,7 +890,7 @@ export default function App() {
             <p className="text-brand-200 text-lg">Maxtel tự hào đồng hành cùng các đơn vị thi công trên toàn quốc.</p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { 
                 name: "Anh Hoàng Quang", 
@@ -1014,7 +1014,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="glass-panel-heavy text-brand-200 text-sm border-t border-brand-500/30 py-12 text-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <div className="flex items-center mb-6">
               <img src="https://maxtel.vn/wp-content/uploads/2024/06/cropped-Logo-MAXTEL-3000.png" loading="lazy" decoding="async" alt="MAXTEL Logo" className="h-8 md:h-10 w-auto object-contain" />
