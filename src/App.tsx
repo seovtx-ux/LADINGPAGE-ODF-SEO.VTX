@@ -487,9 +487,12 @@ export default function App() {
                 >
                   Nhận Tư Vấn & Báo Giá <ArrowRight className="w-5 h-5" />
                 </button>
-                <div className="flex items-center gap-2 text-sm sm:text-base font-medium text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] bg-[#0f172a]  sm:bg-transparent px-4 py-2 sm:px-0 sm:py-0 rounded-full shadow-sm sm:shadow-none border border-brand-500/30 sm:border-none">
-                  <ShieldCheck className="w-5 h-5 text-green-500" /> Bảo hành 24 tháng
-                </div>
+                <a 
+                  href="#products"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-4 lg:px-8 lg:py-4 rounded-xl sm:rounded-full font-bold text-base sm:text-lg transition-all bg-accent-600 hover:bg-accent-500 text-white border border-accent-400/50 shadow-[0_0_20px_rgba(195,28,36,0.6)]"
+                >
+                  Xem Sản Phẩm
+                </a>
               </div>
               
               <div className="mt-8 lg:mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 text-sm text-brand-50">
