@@ -569,7 +569,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16 overflow-hidden">
             <h2 className="text-base text-brand-500 font-semibold tracking-wide uppercase">Chất Lượng Vượt Trội</h2>
-            <p className="mt-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-8 font-extrabold tracking-tight text-accent-500 [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] text-center">
+            <p className="inline-block mt-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-8 font-extrabold tracking-tight text-accent-600 bg-white/80 backdrop-blur-md px-6 py-3 rounded-2xl shadow-lg border border-white/20 text-center">
               VÌ SAO ODF MAXTEL LẠI ĐƯỢC SĂN ĐÓN
             </p>
           </div>
@@ -693,7 +693,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
             <h2 className="text-base text-brand-500 font-semibold tracking-wide uppercase"><span className="animate-pulse">Danh Mục Sản Phẩm</span></h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-accent-500 [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] sm:text-4xl">
+            <p className="inline-block mt-2 text-3xl leading-8 font-extrabold tracking-tight text-accent-600 bg-white/80 backdrop-blur-md px-6 py-3 rounded-2xl shadow-lg border border-white/20 sm:text-4xl">
               Sản Phẩm ODF Chính Hãng
             </p>
             <p className="mt-4 text-lg text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)]">Đầy đủ các mẫu mã từ ODF trong nhà, ngoài trời đến tủ phối quang dung lượng cực lớn.</p>
@@ -742,7 +742,7 @@ export default function App() {
                   <div className="p-5 flex-1 flex flex-col border-t border-brand-500/10">
                     <h3 className="text-lg font-bold text-white mb-2 line-clamp-2 group-hover:text-brand-500 transition-colors">{prod.title}</h3>
                     <p className="text-brand-50 text-sm leading-relaxed mb-4 flex-1 line-clamp-3">{prod.desc}</p>
-                    <div className="flex items-center justify-end mt-auto pt-2 gap-2">
+                    <div className="flex items-center justify-center mt-auto pt-2 gap-2">
                       <button className="text-brand-400 bg-brand-900/40 border border-brand-500/30 group-hover:bg-brand-600 group-hover:text-white px-3 py-1.5 text-xs font-bold rounded-lg transition-colors shadow-sm whitespace-nowrap">
                         NHẬN BÁO GIÁ
                       </button>
@@ -754,7 +754,7 @@ export default function App() {
           </motion.div>
           
           <div className="text-center mt-12 sm:mt-16 pt-8 border-t border-brand-500/30">
-            <button onClick={scrollToContact} className="w-full sm:w-auto bg-[#0f172a]  border-2 border-brand-600 text-brand-500 font-bold hover:bg-brand-900/40 px-8 py-3.5 rounded-xl sm:rounded-full inline-flex items-center justify-center gap-2 text-base transition-colors shadow-sm">
+            <button onClick={scrollToContact} className="w-full sm:w-auto bg-accent-600 hover:bg-accent-500 text-white shadow-[0_0_20px_rgba(195,28,36,0.6)] border border-accent-400/50 font-bold px-8 py-3.5 rounded-xl sm:rounded-full inline-flex items-center justify-center gap-2 text-base transition-colors">
               Xem toàn bộ Catalogue (PDF) <ChevronRight className="w-5 h-5"/>
             </button>
           </div>
@@ -766,7 +766,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
             <h2 className="text-base text-brand-500 font-semibold tracking-wide uppercase">Thông Số Kỹ Thuật</h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-accent-500 [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] sm:text-4xl">
+            <p className="inline-block mt-2 text-3xl leading-8 font-extrabold tracking-tight text-accent-600 bg-white/80 backdrop-blur-md px-6 py-3 rounded-2xl shadow-lg border border-white/20 sm:text-4xl">
               Cấu Hình Chi Tiết Từng Dòng Sản Phẩm
             </p>
             <p className="mt-4 text-lg text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)]">Bảng thông số kỹ thuật chuẩn giúp quý khách dễ dàng lựa chọn sản phẩm phù hợp với dự án.</p>
@@ -845,7 +845,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-extrabold text-accent-500 [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] mb-6">THIẾT KẾ THÔNG MINH, DỄ DÀNG VẬN HÀNH</h2>
+              <h2 className="inline-block text-2xl sm:text-3xl font-extrabold text-accent-600 bg-white/80 backdrop-blur-md px-6 py-3 rounded-2xl shadow-lg border border-white/20 mb-6">THIẾT KẾ THÔNG MINH, DỄ DÀNG VẬN HÀNH</h2>
               <p className="text-lg text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] mb-8">
                 Hộp phối quang ODF Maxtel (12FO, 24FO, 48FO, 96FO) được thiết kế theo tiêu chuẩn công nghiệp 19 inch, cấu trúc gọn nhẹ nhưng cực kỳ vững chắc.
               </p>
