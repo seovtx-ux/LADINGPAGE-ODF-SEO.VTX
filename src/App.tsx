@@ -580,7 +580,7 @@ export default function App() {
               {[
                 { 
                   icon: ShieldCheck, 
-                  title: "Độ Bền Vô Địch", 
+                  title: "Chất Liệu Cấu Tạo", 
                   desc: "Làm từ thép cán lạnh cao cấp, bề mặt phủ sơn tĩnh điện chống xước, chống gỉ sét hoàn hảo." 
                 },
                 { 
@@ -622,7 +622,7 @@ export default function App() {
                  <AnimatePresence mode="wait">
                    {[
                      {
-                       title: "Độ Bền Vô Địch",
+                       title: "Chất Liệu Cấu Tạo",
                        desc: "Chi tiết hình ảnh độ dày thép, nước sơn tĩnh điện và cấu trúc gia cố chịu lực của vỏ ODF.",
                        icon: ShieldCheck,
                        image: "https://images.unsplash.com/photo-1623838965042-78d2b781da67?auto=format&fit=crop&q=80&w=800&h=600"
@@ -842,7 +842,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-extrabold text-accent-500 [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] mb-6">Thiết kế thông minh, thân thiện với kỹ thuật viên</h2>
+              <h2 className="text-3xl font-extrabold text-accent-500 [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] mb-6">THIẾT KẾ THÔNG MINH, DỄ DÀNG VẬN HÀNH</h2>
               <p className="text-lg text-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] mb-8">
                 Hộp phối quang ODF Maxtel (12FO, 24FO, 48FO, 96FO) được thiết kế theo tiêu chuẩn công nghiệp 19 inch, cấu trúc gọn nhẹ nhưng cực kỳ vững chắc.
               </p>
@@ -1063,6 +1063,21 @@ export default function App() {
           © {new Date().getFullYear()} Maxtel. All rights reserved.
         </div>
       </footer>
+
+      {/* Floating Zalo Button */}
+      <a 
+        href="https://zalo.me/0973497685" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-24 sm:bottom-8 right-4 sm:right-8 z-[60] w-12 h-12 sm:w-16 sm:h-16 bg-[#0068FF] rounded-full shadow-[0_0_20px_rgba(0,104,255,0.4)] hover:scale-110 hover:shadow-[0_0_25px_rgba(0,104,255,0.6)] transition-all flex items-center justify-center isolate border-2 border-white"
+        aria-label="Liên hệ Zalo"
+      >
+        <span className="font-extrabold text-white text-sm sm:text-lg mb-[1px] tracking-tight" style={{ fontFamily: 'sans-serif' }}>Zalo</span>
+        <span className="absolute -top-1 -right-1 flex h-4 w-4 sm:h-5 sm:w-5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-4 w-4 sm:h-5 sm:w-5 bg-red-500 border-2 border-white"></span>
+        </span>
+      </a>
 
       {/* Floating CTA for Mobile */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-[#0f172a]   border-t border-brand-500/40 z-50 sm:hidden shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
